@@ -34,14 +34,18 @@ function CheckinBooking() {
   const moveBack = useMoveBack();
   const { checkin, isCheckingin } = useChecking();
 
+  const isPaid = booking ? booking.isPaid : "";
+
   useEffect(
     () => setConfirmpaid(booking ? booking.isPaid : false),
-    [booking ? booking.isPaid : "", booking]
+    [isPaid, booking]
   );
+
+  const hasbreakfastt = booking ? booking.hasBreakfast : "";
 
   useEffect(
     () => setAddbreakfast(booking ? booking.hasBreakfast : false),
-    [booking ? booking.hasBreakfast : "", booking]
+    [hasbreakfastt, booking]
   );
   if (isLoading || isLoadingsetting) return <Spinner />;
 
@@ -74,8 +78,6 @@ function CheckinBooking() {
       checkin({ bookingId, breakfast: {} });
     }
   }
-
-  function handleaddbreakfast() {}
 
   return (
     <>
