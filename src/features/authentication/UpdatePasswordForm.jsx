@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import Button from "../../ui/Button";
 import Form from "../../ui/Form";
-import FormRow from "../../ui/FormRow";
+import FormRow from "../../ui/Formrow";
 import Input from "../../ui/Input";
 
 import { useUpdateUser } from "./useUpdateUser";
